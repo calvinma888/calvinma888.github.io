@@ -27,6 +27,7 @@
             max-width: 1200px;
             width: 100%;
             padding: 20px;
+            flex-direction: column; /* Stack sections vertically */
         }
 
         /* Hero section */
@@ -147,10 +148,32 @@
                 </div>
             </div>
 
-            <!-- Preview Window -->
+            <!-- Preview Window for Projects -->
             <div id="portfolio-preview" class="portfolio-preview">
                 <h3>Project Preview</h3>
                 <p>Click on a project to see more details here.</p>
+            </div>
+        </section>
+
+        <!-- Papers section -->
+        <section id="papers" class="portfolio-section">
+            <!-- Paper List -->
+            <div class="portfolio-list">
+                <div class="portfolio-item" onclick="showPaperPreview('paper1')">
+                    <h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3>
+                    <p>Link to the paper.</p>
+                </div>
+                <div class="portfolio-item" onclick="showPaperPreview('paper2')">
+                    <h3>Deep Q-Learning for Trading Cryptocurrency</h3>
+                    <p>Link to the paper.</p>
+                </div>
+            </div>
+
+            <!-- Preview Window for Papers -->
+            <div id="paper-preview" class="portfolio-preview">
+                <h3>Paper Preview</h3>
+                <p>Click on a paper to see more details here.</p>
+                <a id="paper-link" href="#" target="_blank">Read Paper</a>
             </div>
         </section>
     </div>
@@ -161,16 +184,35 @@
     </footer>
 
     <script>
-        const previewData = {
+        const projectPreviewData = {
             'project1': `<h3>Project 1: Full-Stack App</h3><p>Detailed description of a full-stack web app built with React and Node.js, focusing on its features and technologies used.</p>`,
             'project2': `<h3>Project 2: Data Visualization Tool</h3><p>Interactive data visualization tool using D3.js with an overview of the challenges and the tech stack.</p>`,
             'project3': `<h3>Project 3: Machine Learning Model</h3><p>Description of a machine learning model for predicting housing prices, including algorithms and dataset info.</p>`,
             'project4': `<h3>Project 4: Mobile Finance App</h3><p>Flutter-based mobile app for managing personal finances, with a focus on UI/UX and backend integration.</p>`
         };
 
+        const paperData = {
+            'paper1': {
+                title: "Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis",
+                link: "https://www.mdpi.com/1422-0067/23/7/3962"
+            },
+            'paper2': {
+                title: "Deep Q-Learning for Trading Cryptocurrency",
+                link: "https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064"
+            }
+        };
+
         function showPreview(projectId) {
             const previewSection = document.getElementById('portfolio-preview');
-            previewSection.innerHTML = previewData[projectId];
+            previewSection.innerHTML = projectPreviewData[projectId];
+            previewSection.classList.add('active');
+        }
+
+        function showPaperPreview(paperId) {
+            const paper = paperData[paperId];
+            const previewSection = document.getElementById('paper-preview');
+            document.getElementById('paper-link').href = paper.link;
+            previewSection.innerHTML = `<h3>${paper.title}</h3><p>Click the link below to read the paper.</p>`;
             previewSection.classList.add('active');
         }
     </script>
