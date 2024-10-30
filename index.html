@@ -70,6 +70,8 @@
             padding: 20px;
             border-radius: 8px;
             cursor: pointer;
+            color: #333; /* Change text color for items */
+            text-decoration: none; /* Remove underline */
         }
 
         .portfolio-item h3 {
@@ -79,27 +81,6 @@
 
         .portfolio-item p {
             color: #666;
-        }
-
-        /* Right panel (Preview) */
-        .portfolio-preview {
-            flex: 1;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            display: none; /* Initially hidden */
-        }
-
-        .portfolio-preview.active {
-            display: block;
-        }
-
-        /* Iframe for website preview */
-        .iframe-preview {
-            width: 100%;
-            height: 400px; /* Set a height for the iframe */
-            border: none; /* Remove border */
         }
 
         /* Footer */
@@ -154,12 +135,6 @@
                     <p>A mobile app developed with Flutter for managing personal finances.</p>
                 </div>
             </div>
-
-            <!-- Preview Window for Projects -->
-            <div id="portfolio-preview" class="portfolio-preview">
-                <h3>Project Preview</h3>
-                <div id="project-iframe-container"></div>
-            </div>
         </section>
 
         <!-- Publications Section -->
@@ -167,20 +142,14 @@
             <h2>Publications</h2>
             <!-- Paper List -->
             <div class="portfolio-list">
-                <div class="portfolio-item" onclick="showPaperPreview('paper1')">
+                <a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank" class="portfolio-item">
                     <h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3>
-                    <p>Link to the paper.</p>
-                </div>
-                <div class="portfolio-item" onclick="showPaperPreview('paper2')">
+                    <p>International Journal of Molecular Sciences</p>
+                </a>
+                <a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank" class="portfolio-item">
                     <h3>Deep Q-Learning for Trading Cryptocurrency</h3>
-                    <p>Link to the paper.</p>
-                </div>
-            </div>
-
-            <!-- Preview Window for Papers -->
-            <div id="paper-preview" class="portfolio-preview">
-                <h3>Paper Preview</h3>
-                <iframe id="paper-iframe" class="iframe-preview" src="" frameborder="0"></iframe>
+                    <p>Journal of Financial Data Science</p>
+                </a>
             </div>
         </section>
     </div>
@@ -198,28 +167,9 @@
             'project4': `<h3>Project 4: Mobile Finance App</h3><p>Flutter-based mobile app for managing personal finances, with a focus on UI/UX and backend integration.</p>`
         };
 
-        const paperData = {
-            'paper1': {
-                title: "Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis",
-                link: "https://www.mdpi.com/1422-0067/23/7/3962"
-            },
-            'paper2': {
-                title: "Deep Q-Learning for Trading Cryptocurrency",
-                link: "https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064"
-            }
-        };
-
         function showPreview(projectId) {
             const previewSection = document.getElementById('portfolio-preview');
             document.getElementById('project-iframe-container').innerHTML = projectPreviewData[projectId];
-            previewSection.classList.add('active');
-        }
-
-        function showPaperPreview(paperId) {
-            const paper = paperData[paperId];
-            const previewSection = document.getElementById('paper-preview');
-            const iframe = document.getElementById('paper-iframe');
-            iframe.src = paper.link; // Set the iframe source to the paper link
             previewSection.classList.add('active');
         }
     </script>
