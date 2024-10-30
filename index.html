@@ -52,18 +52,16 @@
 
         .portfolio-section {
             display: flex;
-            flex-direction: row;
+            flex-direction: column; /* Stack items vertically */
             width: 100%;
             padding: 20px;
         }
 
         /* Left panel */
         .portfolio-list {
-            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 20px;
-            padding-right: 20px;
         }
 
         .portfolio-item {
@@ -95,6 +93,13 @@
 
         .portfolio-preview.active {
             display: block;
+        }
+
+        /* Iframe for website preview */
+        .iframe-preview {
+            width: 100%;
+            height: 400px; /* Set a height for the iframe */
+            border: none; /* Remove border */
         }
 
         /* Footer */
@@ -153,7 +158,7 @@
             <!-- Preview Window for Projects -->
             <div id="portfolio-preview" class="portfolio-preview">
                 <h3>Project Preview</h3>
-                <p>Click on a project to see more details here.</p>
+                <div id="project-iframe-container"></div>
             </div>
         </section>
 
@@ -175,8 +180,7 @@
             <!-- Preview Window for Papers -->
             <div id="paper-preview" class="portfolio-preview">
                 <h3>Paper Preview</h3>
-                <p>Click the link below to read the paper:</p>
-                <a id="paper-link" href="#" target="_blank">Read Paper</a>
+                <iframe id="paper-iframe" class="iframe-preview" src="" frameborder="0"></iframe>
             </div>
         </section>
     </div>
@@ -207,15 +211,15 @@
 
         function showPreview(projectId) {
             const previewSection = document.getElementById('portfolio-preview');
-            previewSection.innerHTML = projectPreviewData[projectId];
+            document.getElementById('project-iframe-container').innerHTML = projectPreviewData[projectId];
             previewSection.classList.add('active');
         }
 
         function showPaperPreview(paperId) {
             const paper = paperData[paperId];
             const previewSection = document.getElementById('paper-preview');
-            document.getElementById('paper-link').href = paper.link;
-            previewSection.innerHTML = `<h3>${paper.title}</h3><p>Click the link below to read the paper:</p><a href="${paper.link}" target="_blank">Read Paper</a>`;
+            const iframe = document.getElementById('paper-iframe');
+            iframe.src = paper.link; // Set the iframe source to the paper link
             previewSection.classList.add('active');
         }
     </script>
