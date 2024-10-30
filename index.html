@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calvin Ma</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -38,7 +40,7 @@
 
         .hero h1 {
             font-size: 5em; /* Increased size */
-            font-family: 'Cursive', sans-serif; /* Cursive font */
+            font-family: 'Dancing Script', cursive; /* Cursive font from Google Fonts */
             margin-bottom: 10px;
         }
 
@@ -133,45 +135,4 @@
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project2')">
                     <h3>Project 2</h3>
-                    <p>An interactive data visualization tool created with D3.js.</p>
-                </div>
-                <div class="portfolio-item" onclick="showPreview('project3')">
-                    <h3>Project 3</h3>
-                    <p>A machine learning model for predicting housing prices.</p>
-                </div>
-                <div class="portfolio-item" onclick="showPreview('project4')">
-                    <h3>Project 4</h3>
-                    <p>A mobile app developed with Flutter for managing personal finances.</p>
-                </div>
-            </div>
-
-            <!-- Preview Window -->
-            <div id="portfolio-preview" class="portfolio-preview">
-                <h3>Project Preview</h3>
-                <p>Click on a project to see more details here.</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Calvin Ma. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        const previewData = {
-            'project1': `<h3>Project 1: Full-Stack App</h3><p>Detailed description of a full-stack web app built with React and Node.js, focusing on its features and technologies used.</p>`,
-            'project2': `<h3>Project 2: Data Visualization Tool</h3><p>Interactive data visualization tool using D3.js with an overview of the challenges and the tech stack.</p>`,
-            'project3': `<h3>Project 3: Machine Learning Model</h3><p>Description of a machine learning model for predicting housing prices, including algorithms and dataset info.</p>`,
-            'project4': `<h3>Project 4: Mobile Finance App</h3><p>Flutter-based mobile app for managing personal finances, with a focus on UI/UX and backend integration.</p>`
-        };
-
-        function showPreview(projectId) {
-            const previewSection = document.getElementById('portfolio-preview');
-            previewSection.innerHTML = previewData[projectId];
-            previewSection.classList.add('active');
-        }
-    </script>
-
-</body>
-</html>
+                    <p>An interactive data v
