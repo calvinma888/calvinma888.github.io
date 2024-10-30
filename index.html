@@ -31,6 +31,7 @@
 
         /* Hero section */
         .hero {
+            position: relative; /* Enable positioning for child elements */
             width: 100%;
             background-color: #001f3f; /* Dark blue background */
             padding: 60px 20px;
@@ -54,6 +55,19 @@
             height: auto;
             margin-top: 20px;
             border-radius: 10px;
+        }
+
+        /* Title styling for Calvin Ma */
+        .name-overlay {
+            position: absolute;
+            top: 20%; /* Position at the top of the image */
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center horizontally */
+            font-size: 3em; /* Adjust size as needed */
+            font-family: 'Dancing Script', cursive; /* Cursive font */
+            color: white; /* Text color */
+            text-shadow: 2px 2px 0px black; /* Black outline effect */
+            text-align: center; /* Center alignment */
         }
 
         /* Portfolio section styling */
@@ -129,7 +143,7 @@
 
     <!-- Hero section -->
     <section class="hero">
-        <h1>Calvin Ma</h1>
+        <h1 class="name-overlay">Calvin Ma</h1> <!-- Centered title with outline -->
         <p></p>
         <img src="toronto futuristic.webp" alt="Toronto skyline">
     </section>
@@ -138,8 +152,7 @@
     <div class="container">
         <section id="projects" class="portfolio-section">
             <div class="portfolio-list">
-                <h2>Projects</h2>
-                <!-- Project List -->
+                <h2>Projects</h2> <!-- Title for projects -->
                 <div class="portfolio-item" onclick="showPreview('project1')">
                     <h3>Project 1</h3>
                     <p>A full-stack web application built with React and Node.js.</p>
@@ -157,10 +170,12 @@
                     <p>A mobile app developed with Flutter for managing personal finances.</p>
                 </div>
             </div>
-            <!-- Preview Window for Projects -->
-            <div id="project-preview" class="portfolio-preview">
+
+            <!-- Preview Window -->
+            <div id="portfolio-preview" class="portfolio-preview">
                 <h3>Project Preview</h3>
-                <div class="iframe-container" id="iframe-container"></div>
+                <p>Click on a project to see more details here.</p>
+                <div class="iframe-container" id="preview-frame"></div>
             </div>
         </section>
     </div>
@@ -169,15 +184,21 @@
     <div class="container">
         <section id="publications" class="portfolio-section">
             <div class="portfolio-list">
-                <h2>Publications</h2>
-                <a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank" class="portfolio-item">
+                <h2>Publications</h2> <!-- Title for publications -->
+                <div class="portfolio-item" onclick="showPublicationPreview('paper1')">
                     <h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3>
                     <p>International Journal of Molecular Sciences</p>
-                </a>
-                <a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank" class="portfolio-item">
+                </div>
+                <div class="portfolio-item" onclick="showPublicationPreview('paper2')">
                     <h3>Deep Q-Learning for Trading Cryptocurrency</h3>
                     <p>Journal of Financial Data Science</p>
-                </a>
+                </div>
+            </div>
+
+            <!-- Preview Window -->
+            <div id="publications-preview" class="portfolio-preview">
+                <h3>Publication Preview</h3>
+                <div class="iframe-container" id="publication-frame"></div>
             </div>
         </section>
     </div>
@@ -188,20 +209,31 @@
     </footer>
 
     <script>
-        const projectPreviewData = {
-            'project1': `<iframe class="iframe-container" src="your_project1_pdf_link.pdf"></iframe>`, // Replace with the actual PDF link
-            'project2': `<iframe class="iframe-container" src="your_project2_pdf_link.pdf"></iframe>`, // Replace with the actual PDF link
-            'project3': `<iframe class="iframe-container" src="your_project3_pdf_link.pdf"></iframe>`, // Replace with the actual PDF link
-            'project4': `<iframe class="iframe-container" src="your_project4_pdf_link.pdf"></iframe>`  // Replace with the actual PDF link
+        const previewData = {
+            'project1': `<h3>Project 1: Full-Stack App</h3><p>Detailed description of a full-stack web app built with React and Node.js, focusing on its features and technologies used.</p>`,
+            'project2': `<h3>Project 2: Data Visualization Tool</h3><p>Interactive data visualization tool using D3.js with an overview of the challenges and the tech stack.</p>`,
+            'project3': `<h3>Project 3: Machine Learning Model</h3><p>Description of a machine learning model for predicting housing prices, including algorithms and dataset info.</p>`,
+            'project4': `<h3>Project 4: Mobile Finance App</h3><p>Flutter-based mobile app for managing personal finances, with a focus on UI/UX and backend integration.</p>`
+        };
+
+        const publicationData = {
+            'paper1': `<h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3><p><a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank">Read here</a></p>`,
+            'paper2': `<h3>Deep Q-Learning for Trading Cryptocurrency</h3><p><a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank">Read here</a></p>`
         };
 
         function showPreview(projectId) {
-            const previewSection = document.getElementById('project-preview');
-            const iframeContainer = document.getElementById('iframe-container');
-            iframeContainer.innerHTML = projectPreviewData[projectId];
+            const previewSection = document.getElementById('portfolio-preview');
+            const previewFrame = document.getElementById('preview-frame');
+            previewFrame.innerHTML = previewData[projectId];
+            previewSection.classList.add('active');
+        }
+
+        function showPublicationPreview(paperId) {
+            const previewSection = document.getElementById('publications-preview');
+            const previewFrame = document.getElementById('publication-frame');
+            previewFrame.innerHTML = publicationData[paperId];
             previewSection.classList.add('active');
         }
     </script>
-
 </body>
 </html>
