@@ -27,7 +27,6 @@
             max-width: 1200px;
             width: 100%;
             padding: 20px;
-            flex-direction: column; /* Stack sections vertically */
         }
 
         /* Hero section */
@@ -50,9 +49,10 @@
             margin-bottom: 20px;
         }
 
+        /* Portfolio section styling */
         .portfolio-section {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
+            flex-direction: row; /* Keep items in a row */
             width: 100%;
             padding: 20px;
             margin-bottom: 40px; /* Added space below each section */
@@ -60,6 +60,7 @@
 
         /* Left panel */
         .portfolio-list {
+            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -86,6 +87,7 @@
 
         /* Preview Window */
         .portfolio-preview {
+            flex: 1; /* Take available space on the right */
             background-color: #fff;
             color: #333;
             border-radius: 8px;
@@ -98,6 +100,13 @@
             display: block;
         }
 
+        .iframe-container {
+            width: 100%;
+            height: 400px; /* Set a height for the iframe */
+            border: none;
+            margin-top: 10px; /* Space above the iframe */
+        }
+
         /* Footer */
         .footer {
             background-color: #333;
@@ -106,14 +115,6 @@
             padding: 20px;
             width: 100%;
             margin-top: 20px;
-        }
-
-        /* Placeholder image style */
-        .hero img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-            border-radius: 10px;
         }
     </style>
 </head>
@@ -130,9 +131,9 @@
     <div class="container">
         <!-- Projects Section -->
         <section id="projects" class="portfolio-section">
-            <h2>Projects</h2>
-            <!-- Project List -->
             <div class="portfolio-list">
+                <h2>Projects</h2>
+                <!-- Project List -->
                 <div class="portfolio-item" onclick="showPreview('project1')">
                     <h3>Project 1</h3>
                     <p>A full-stack web application built with React and Node.js.</p>
@@ -153,26 +154,25 @@
             <!-- Preview Window for Projects -->
             <div id="project-preview" class="portfolio-preview">
                 <h3>Project Preview</h3>
-                <p>Click on a project to see more details here.</p>
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications" class="portfolio-section">
-            <h2>Publications</h2>
-            <!-- Paper List -->
-            <div class="portfolio-list">
-                <a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank" class="portfolio-item">
-                    <h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3>
-                    <p>International Journal of Molecular Sciences</p>
-                </a>
-                <a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank" class="portfolio-item">
-                    <h3>Deep Q-Learning for Trading Cryptocurrency</h3>
-                    <p>Journal of Financial Data Science</p>
-                </a>
+                <div class="iframe-container" id="iframe-container"></div>
             </div>
         </section>
     </div>
+
+    <!-- Publications Section -->
+    <section id="publications" class="portfolio-section">
+        <h2>Publications</h2>
+        <div class="portfolio-list">
+            <a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank" class="portfolio-item">
+                <h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3>
+                <p>International Journal of Molecular Sciences</p>
+            </a>
+            <a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank" class="portfolio-item">
+                <h3>Deep Q-Learning for Trading Cryptocurrency</h3>
+                <p>Journal of Financial Data Science</p>
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -181,15 +181,16 @@
 
     <script>
         const projectPreviewData = {
-            'project1': `<h3>Project 1: Full-Stack App</h3><p>Detailed description of a full-stack web app built with React and Node.js, focusing on its features and technologies used.</p>`,
-            'project2': `<h3>Project 2: Data Visualization Tool</h3><p>Interactive data visualization tool using D3.js with an overview of the challenges and the tech stack.</p>`,
-            'project3': `<h3>Project 3: Machine Learning Model</h3><p>Description of a machine learning model for predicting housing prices, including algorithms and dataset info.</p>`,
-            'project4': `<h3>Project 4: Mobile Finance App</h3><p>Flutter-based mobile app for managing personal finances, with a focus on UI/UX and backend integration.</p>`
+            'project1': `<iframe class="iframe-container" src="your_project1_pdf_link.pdf"></iframe>`, // Replace with the actual PDF link
+            'project2': `<iframe class="iframe-container" src="your_project2_pdf_link.pdf"></iframe>`, // Replace with the actual PDF link
+            'project3': `<iframe class="iframe-container" src="your_project3_pdf_link.pdf"></iframe>`, // Replace with the actual PDF link
+            'project4': `<iframe class="iframe-container" src="your_project4_pdf_link.pdf"></iframe>`  // Replace with the actual PDF link
         };
 
         function showPreview(projectId) {
             const previewSection = document.getElementById('project-preview');
-            previewSection.innerHTML = projectPreviewData[projectId];
+            const iframeContainer = document.getElementById('iframe-container');
+            iframeContainer.innerHTML = projectPreviewData[projectId];
             previewSection.classList.add('active');
         }
     </script>
