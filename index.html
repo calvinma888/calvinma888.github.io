@@ -55,6 +55,7 @@
             flex-direction: column; /* Stack items vertically */
             width: 100%;
             padding: 20px;
+            margin-bottom: 40px; /* Added space below each section */
         }
 
         /* Left panel */
@@ -81,6 +82,20 @@
 
         .portfolio-item p {
             color: #666;
+        }
+
+        /* Preview Window */
+        .portfolio-preview {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: none; /* Initially hidden */
+        }
+
+        .portfolio-preview.active {
+            display: block;
         }
 
         /* Footer */
@@ -135,6 +150,11 @@
                     <p>A mobile app developed with Flutter for managing personal finances.</p>
                 </div>
             </div>
+            <!-- Preview Window for Projects -->
+            <div id="project-preview" class="portfolio-preview">
+                <h3>Project Preview</h3>
+                <p>Click on a project to see more details here.</p>
+            </div>
         </section>
 
         <!-- Publications Section -->
@@ -168,8 +188,8 @@
         };
 
         function showPreview(projectId) {
-            const previewSection = document.getElementById('portfolio-preview');
-            document.getElementById('project-iframe-container').innerHTML = projectPreviewData[projectId];
+            const previewSection = document.getElementById('project-preview');
+            previewSection.innerHTML = projectPreviewData[projectId];
             previewSection.classList.add('active');
         }
     </script>
