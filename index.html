@@ -34,35 +34,23 @@
             position: relative; /* Enable positioning for child elements */
             width: 100%;
             background-color: #001f3f; /* Dark blue background */
-            padding: 60px 20px;
+            padding: 60px 20px 20px; /* Padding adjusted to remove space at the top */
             text-align: center;
             color: white;
-        }
-
-        .hero h1 {
-            font-size: 5em; /* Increased size */
-            font-family: 'Dancing Script', cursive; /* Cursive font from Google Fonts */
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.5em; /* Increased size */
-            margin-bottom: 20px;
         }
 
         .hero img {
             max-width: 100%;
             height: auto;
-            margin-top: 20px;
             border-radius: 10px;
         }
 
         /* Title styling for Calvin Ma */
         .name-overlay {
             position: absolute;
-            top: 20%; /* Position at the top of the image */
+            bottom: 10%; /* Position at the bottom of the image */
             left: 50%;
-            transform: translate(-50%, -50%); /* Center horizontally */
+            transform: translate(-50%, 50%); /* Center horizontally */
             font-size: 3em; /* Adjust size as needed */
             font-family: 'Dancing Script', cursive; /* Cursive font */
             color: white; /* Text color */
@@ -143,9 +131,8 @@
 
     <!-- Hero section -->
     <section class="hero">
-        <h1 class="name-overlay">Calvin Ma</h1> <!-- Centered title with outline -->
-        <p></p>
         <img src="toronto futuristic.webp" alt="Toronto skyline">
+        <h1 class="name-overlay">Calvin Ma</h1> <!-- Centered title with outline -->
     </section>
 
     <!-- Projects Section -->
@@ -217,8 +204,8 @@
         };
 
         const publicationData = {
-            'paper1': `<h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3><p><a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank">Read here</a></p>`,
-            'paper2': `<h3>Deep Q-Learning for Trading Cryptocurrency</h3><p><a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank">Read here</a></p>`
+            'paper1': `<h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3><p><a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank">International Journal of Molecular Sciences</a></p>`,
+            'paper2': `<h3>Deep Q-Learning for Trading Cryptocurrency</h3><p><a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank">Journal of Financial Data Science</a></p>`
         };
 
         function showPreview(projectId) {
