@@ -18,7 +18,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow: hidden; /* Prevent scrollbars due to falling leaves */
         }
 
         .container {
@@ -35,7 +34,6 @@
             padding: 60px 20px;
             text-align: center;
             color: white;
-            position: relative; /* For falling leaves */
         }
 
         .hero h1 {
@@ -106,38 +104,12 @@
             margin-top: 20px;
         }
 
-        /* Falling leaves */
-        .leaf {
-            position: absolute;
-            top: -50px;
-            animation: fall linear infinite;
-            opacity: 0.7;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0);
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        /* Adjust different leaf types */
-        .leaf.red { 
-            left: 10%; 
-            animation-duration: 5s;
-            animation-delay: 0s;
-        }
-        .leaf.green { 
-            left: 40%; 
-            animation-duration: 7s;
-            animation-delay: 1s;
-        }
-        .leaf.yellow { 
-            left: 70%; 
-            animation-duration: 6s;
-            animation-delay: 2s;
+        /* Placeholder image style */
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -149,11 +121,6 @@
         <p></p>
         <img src="toronto futuristic.webp" alt="Toronto skyline">
     </section>
-
-    <!-- Falling leaves -->
-    <div class="leaf red"><img src="red-leaf.png" alt="Red Maple Leaf" width="50"></div>
-    <div class="leaf green"><img src="green-leaf.png" alt="Green Maple Leaf" width="50"></div>
-    <div class="leaf yellow"><img src="yellow-leaf.png" alt="Yellow Maple Leaf" width="50"></div>
 
     <!-- Portfolio section -->
     <div class="container">
