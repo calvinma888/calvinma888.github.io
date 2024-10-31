@@ -141,20 +141,26 @@
             <div class="portfolio-list">
                 <h2>Projects</h2> <!-- Title for projects -->
                 <div class="portfolio-item" onclick="showPreview('project1')">
-                    <h3>Project 1</h3>
-                    <p>A full-stack web application built with React and Node.js.</p>
+                    <h3>Fine-tuning BERT to Detect Insincere Quora Submissions (Python)</h3>
+                    <p>BERT (Bidirectional Encoder Representations from Transformers) was developed by Google AI as a "swiss-army knife" to answer many of natural language processing (NLP) problems, including sentiment analysis, question answering, text generation, summarization, and text prediction. Training a natural language learning model such as BERT is very expensive and time-consuming because of the large number of parameters (110M+) and the massive amount of traning data (3.3 billion words). Therefore, we utilize transfer learning with Tensorflow and Tensorflow Hub in order to finetune a pre-trained BERT model onto our dataset, which is a selection of sincere and insincere questions from Quora.com, in order to classify whether or not a question is authentic.</p>
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project2')">
-                    <h3>Project 2</h3>
-                    <p>An interactive data visualization tool created with D3.js.</p>
+                    <h3>Classifying Diabetes with PySparkML (PySpark)</h3>
+                    <p>There are two types of diabetes: Type 1 diabetes (which is when the immune system attacks the insulin-producing cells in the body) develops early in life, and Type 2 diabetes (which is when the body develops insulin resistance) usually develops gradually over time due to lifestyle-related factors. Type 2 diabetes may be reversed through diet, weight loss, or exercise, and therefore, accurate and timely diagnosis of the disease is crucial.</p>
+                    <p>Type 2 diabetes can have numerous indicating factors including pregnancy, blood glucose level, skin thickness, insulin resistance, BMI, age, and many more. However, because oftentimes these symptoms develop slowly, they may be difficult to recognize. Therefore, we utilize PySpark ML in order to train a model to classify whether or not a patient has diabetes, with a resulting Area Under the Curve of 0.8412.</p>
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project3')">
-                    <h3>Project 3</h3>
-                    <p>A machine learning model for predicting housing prices.</p>
+                    <h3>US Political Party Affiliation: Data Exploration and Visualization (Python)</h3>
+                    <p>Datasets that we receive are often incomplete or redundant. This project demonstrates typical data cleaning prior to analyses, feature engineering, and data visualization</p>
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project4')">
-                    <h3>Project 4</h3>
-                    <p>A mobile app developed with Flutter for managing personal finances.</p>
+                    <h3>Predicting Customer Churn (PySpark)</h3>
+                    <p>Customer churn is one of the most important metrics of any business, because the cost of acquiring a new client far exceeds the cost of retaining an existing client. In this project, we used a variety of classification algorithms from PySpark including decision trees, random forest, gradient boosting, naive bayes, and other classification algorithms in order to predict whether a customer will churn (exit) based on their features such as credit score, geography, membership, tenure, and many more.</p>
+                    <p>After training all of the models, the gradient boosting model was selected because it had the highest F1 score and area under PR; metrics were selected because of the unbalanced nature of customers who exit and those who stayed. A gradient boosting model for the purpose of cross-validation was then created for hyperparameter tuning. The final model had an F1 score of 0.8371 and an accuracy of 0.8485.</p>
+                </div>
+                <div class="portfolio-item" onclick="showPreview('project5')">
+                    <h3>Predicting Employee Attrition through Deep Learning (Python)</h3>
+                    <p>Employees may become less productive the longer they stay at the same company, due to many underlying factors. This project builds a neural network model to predict employee attrition and then see if concessions given would reduce or eliminate attrition. Ultimately, this can be used to see if an employee should be given extra concessions or replaced.</p>
                 </div>
             </div>
 
