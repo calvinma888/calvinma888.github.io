@@ -111,7 +111,7 @@
 
         .iframe-container {
             width: 100%;
-            height: 800px; /* Increased height for the iframe */
+            height: 800px; /* Set a taller height for the iframe */
             border: none;
             margin-top: 10px; /* Space above the iframe */
         }
@@ -181,31 +181,37 @@
                 <div class="portfolio-item">
                     <h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3>
                     <p>International Journal of Molecular Sciences</p>
-                    <a href="https://www.mdpi.com/1422-0067/20/16/4029">https://www.mdpi.com/1422-0067/20/16/4029</a>
+                    <a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank">Link to the Paper</a>
                 </div>
                 <div class="portfolio-item">
-                    <h3>Interpretation of Novel Genetic Variants in a Large Cohort of Chinese Retinitis Pigmentosa Patients</h3>
-                    <p>European Journal of Human Genetics</p>
-                    <a href="https://www.nature.com/articles/s41431-022-01055-4">https://www.nature.com/articles/s41431-022-01055-4</a>
+                    <h3>Deep Q-Learning for Trading Cryptocurrency</h3>
+                    <p>Journal of Financial Data Science</p>
+                    <a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank">Link to the Paper</a>
                 </div>
             </div>
         </section>
     </div>
 
-    <script>
-        function showPreview(projectId) {
-            const preview = document.getElementById("portfolio-preview");
-            preview.classList.add("active");
-
-            const frame = document.getElementById("preview-frame");
-            frame.innerHTML = `<iframe src="${projectId}.html" width="100%" height="800" style="border:none;"></iframe>`;
-        }
-    </script>
-
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Calvin Ma</p>
+        <p>&copy; 2024 Calvin Ma. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        const previewData = {
+            'project1': `<iframe src="project1.pdf" class="iframe-container"></iframe>`,
+            'project2': `<iframe src="project2.pdf" class="iframe-container"></iframe>`,
+            'project3': `<iframe src="project3.pdf" class="iframe-container"></iframe>`,
+            'project4': `<iframe src="project4.pdf" class="iframe-container"></iframe>`,
+            'project5': `<iframe src="project5.pdf" class="iframe-container"></iframe>`
+        };
+
+        function showPreview(projectId) {
+            const previewSection = document.getElementById('portfolio-preview');
+            const previewFrame = document.getElementById('preview-frame');
+            previewFrame.innerHTML = previewData[projectId];
+            previewSection.classList.add('active');
+        }
+    </script>
 </body>
 </html>
