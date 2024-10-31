@@ -206,11 +206,21 @@
             'project5': `<iframe src="project5.pdf" class="iframe-container"></iframe>`
         };
 
+        let currentProject = null; // Track the current project being shown
+
         function showPreview(projectId) {
             const previewSection = document.getElementById('portfolio-preview');
             const previewFrame = document.getElementById('preview-frame');
-            previewFrame.innerHTML = previewData[projectId];
-            previewSection.classList.add('active');
+
+            // Toggle visibility if the same project is clicked again
+            if (currentProject === projectId) {
+                previewSection.classList.toggle('active');
+                currentProject = previewSection.classList.contains('active') ? projectId : null;
+            } else {
+                previewFrame.innerHTML = previewData[projectId];
+                previewSection.classList.add('active');
+                currentProject = projectId;
+            }
         }
     </script>
 </body>
