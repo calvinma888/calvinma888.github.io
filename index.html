@@ -7,7 +7,124 @@
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
-        /* Styles omitted for brevity; they remain unchanged */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #001f3f; /* Navy blue background */
+            color: white; /* Change text color to white for contrast */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Patrick Hand', cursive; /* Handwritten font */
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Hero section */
+        .hero {
+            position: relative; /* Enable positioning for child elements */
+            width: 100%;
+            background-color: #001f3f; /* Dark blue background */
+            padding: 60px 20px 20px; /* Padding adjusted to remove space at the top */
+            text-align: center;
+            color: white;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Title styling for Calvin Ma */
+        .name-overlay {
+            position: absolute;
+            bottom: 10%; /* Position at the bottom of the image */
+            left: 50%;
+            transform: translate(-50%, 50%); /* Center horizontally */
+            font-size: 7em; /* Increased size */
+            font-family: 'Dancing Script', cursive; /* Cursive font for title */
+            color: white; /* Text color */
+            text-shadow: 2px 2px 0px black; /* Black outline effect */
+            text-align: center; /* Center alignment */
+        }
+
+        /* Portfolio section styling */
+        .portfolio-section {
+            display: flex;
+            flex-direction: row; /* Keep items in a row */
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 40px; /* Added space below each section */
+        }
+
+        /* Left panel */
+        .portfolio-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background-color: #000; /* Change background to black */
+            color: #fff; /* Change text color to white */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .portfolio-item h3 {
+            color: #00aaff;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-item p {
+            color: #ccc; /* Slightly lighter color for description */
+        }
+
+        /* Preview Window */
+        .portfolio-preview {
+            flex: 1; /* Take available space on the right */
+            background-color: #000; /* Change background to black */
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            display: none; /* Initially hidden */
+        }
+
+        .portfolio-preview.active {
+            display: block;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 1200px; /* Set a taller height for the iframe */
+            border: none;
+            margin-top: 10px; /* Space above the iframe */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -18,8 +135,13 @@
         <h1 class="name-overlay">Calvin Ma</h1> <!-- Centered title with outline -->
     </section>
 
-    <!-- Stock Price Prediction Form -->
-    <h2>Enter a Stock Ticker (e.g., AAPL) to predict the next day's price</h2>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction</title>
+</head>
+<body>
+    <h2>Enter a Stock Ticker (eg. AAPL) to predict the next day's price</h2>
     <p>Predict tomorrow's stock price with 60 days of data through an exponential moving average forecasting model</p>
     <p>Built with AWS Lambda and API Gateway</p>
     <form id="tickerForm">
@@ -29,7 +151,6 @@
     </form>
     <p id="result"></p>
 
-    <!-- JavaScript for Stock Prediction -->
     <script>
         document.getElementById('tickerForm').addEventListener('submit', async function(event) {
             event.preventDefault(); // Prevent form from refreshing the page
@@ -45,7 +166,7 @@
                 }
 
                 const data = await response.json();
-                const predictedPrice = data.body; // Assuming the API returns a field named 'body'
+                const predictedPrice = data.body; // Assuming the API returns a field named 'prediction'
                 
                 // Get tomorrow's date
                 const tomorrow = new Date();
@@ -65,12 +186,59 @@
 
     <!-- Projects Section -->
     <div class="container">
-        <!-- Project sections omitted for brevity; they remain unchanged -->
+        <section id="projects" class="portfolio-section">
+            <div class="portfolio-list">
+                <h2>Projects</h2> <!-- Title for projects -->
+                <div class="portfolio-item" onclick="showPreview('project1')">
+                    <h3>Fine-tuning BERT to Detect Insincere Quora Submissions (Python)</h3>
+                    <p>BERT (Bidirectional Encoder Representations from Transformers) was developed by Google AI as a "swiss-army knife" to answer many of natural language processing (NLP) problems, including sentiment analysis, question answering, text generation, summarization, and text prediction. Training a natural language learning model such as BERT is very expensive and time-consuming because of the large number of parameters (110M+) and the massive amount of traning data (3.3 billion words). Therefore, we utilize transfer learning with Tensorflow and Tensorflow Hub in order to finetune a pre-trained BERT model onto our dataset, which is a selection of sincere and insincere questions from Quora.com, in order to classify whether or not a question is authentic.</p>
+                </div>
+                <div class="portfolio-item" onclick="showPreview('project2')">
+                    <h3>Classifying Diabetes with PySparkML (PySpark)</h3>
+                    <p>There are two types of diabetes: Type 1 diabetes (which is when the immune system attacks the insulin-producing cells in the body) develops early in life, and Type 2 diabetes (which is when the body develops insulin resistance) usually develops gradually over time due to lifestyle-related factors. Type 2 diabetes may be reversed through diet, weight loss, or exercise, and therefore, accurate and timely diagnosis of the disease is crucial.</p>
+                    <p>Type 2 diabetes can have numerous indicating factors including pregnancy, blood glucose level, skin thickness, insulin resistance, BMI, age, and many more. However, because oftentimes these symptoms develop slowly, they may be difficult to recognize. Therefore, we utilize PySpark ML in order to train a model to classify whether or not a patient has diabetes, with a resulting Area Under the Curve of 0.8412.</p>
+                </div>
+                <div class="portfolio-item" onclick="showPreview('project3')">
+                    <h3>US Political Party Affiliation: Data Exploration and Visualization (Python)</h3>
+                    <p>Datasets that we receive are often incomplete or redundant. This project demonstrates typical data cleaning prior to analyses, feature engineering, and data visualization</p>
+                </div>
+                <div class="portfolio-item" onclick="showPreview('project4')">
+                    <h3>Predicting Customer Churn (PySpark)</h3>
+                    <p>Customer churn is one of the most important metrics of any business, because the cost of acquiring a new client far exceeds the cost of retaining an existing client. In this project, we used a variety of classification algorithms from PySpark including decision trees, random forest, gradient boosting, naive bayes, and other classification algorithms in order to predict whether a customer will churn (exit) based on their features such as credit score, geography, membership, tenure, and many more.</p>
+                    <p>After training all of the models, the gradient boosting model was selected because it had the highest F1 score and area under PR; metrics were selected because of the unbalanced nature of customers who exit and those who stayed. A gradient boosting model for the purpose of cross-validation was then created for hyperparameter tuning. The final model had an F1 score of 0.8371 and an accuracy of 0.8485.</p>
+                </div>
+                <div class="portfolio-item" onclick="showPreview('project5')">
+                    <h3>Predicting Employee Attrition through Deep Learning (Python)</h3>
+                    <p>Employees may become less productive the longer they stay at the same company, due to many underlying factors. This project builds a neural network model to predict employee attrition and then see if concessions given would reduce or eliminate attrition. Ultimately, this can be used to see if an employee should be given extra concessions or replaced.</p>
+                </div>
+            </div>
+
+            <!-- Preview Window -->
+            <div id="portfolio-preview" class="portfolio-preview">
+                <h3>Project Preview</h3>
+                <p>Click on a project to see more details here.</p>
+                <div class="iframe-container" id="preview-frame"></div>
+            </div>
+        </section>
     </div>
 
     <!-- Publications Section -->
     <div class="container">
-        <!-- Publications sections omitted for brevity; they remain unchanged -->
+        <section id="publications" class="portfolio-section">
+            <div class="portfolio-list">
+                <h2>Publications</h2> <!-- Title for publications -->
+                <div class="portfolio-item">
+                    <h3>Applying Protein–Protein Interactions and Complex Networks to Identify Novel Genes in Retinitis Pigmentosa Pathogenesis</h3>
+                    <p>International Journal of Molecular Sciences</p>
+                    <a href="https://www.mdpi.com/1422-0067/23/7/3962" target="_blank">Link to the Paper</a>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Deep Q-Learning for Trading Cryptocurrency</h3>
+                    <p>Journal of Financial Data Science</p>
+                    <a href="https://www.pm-research.com/content/iijjfds/early/2021/06/08/jfds20211064" target="_blank">Link to the Paper</a>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- Footer -->
@@ -78,7 +246,6 @@
         <p>&copy; 2024 Calvin Ma. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for Project Preview -->
     <script>
         const previewData = {
             'project1': `<iframe src="project1.pdf" class="iframe-container"></iframe>`,
