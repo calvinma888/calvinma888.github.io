@@ -167,7 +167,7 @@
 
             // Directly parse response as JSON
             const data = await response.json();
-            const predictedPrice = data.body; // Use data.body directly if it's already a number
+            const predictedPrice = data; // Use data.body directly if it's already a number
             
             // Get tomorrow's date
             const tomorrow = new Date();
