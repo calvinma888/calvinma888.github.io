@@ -135,6 +135,55 @@
         <h1 class="name-overlay">Calvin Ma</h1> <!-- Centered title with outline -->
     </section>
 
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction</title>
+</head>
+<body>
+    <h2>Enter a Stock Ticker (eg. AAPL) to predict the next day's price</h2>
+    <p>Predict tomorrow's stock price with 60 days of data through an exponential moving average forecasting model</p>
+    <p>Built with AWS Lambda and API Gateway</p>
+    <form id="tickerForm">
+        <label for="ticker">Ticker Symbol:</label>
+        <input type="text" id="ticker" name="ticker" required>
+        <button type="submit">Get Prediction</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('tickerForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+            
+            const ticker = document.getElementById('ticker').value.trim().toUpperCase();
+            const apiUrl = `https://hikjoibv7e64w5ketu4dpb4kjm0squjj.lambda-url.ca-central-1.on.aws/?ticker=${ticker}`;
+            
+            try {
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                const predictedPrice = data.body; // Assuming the API returns a field named 'prediction'
+                
+                // Get tomorrow's date
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const tomorrowStr = tomorrow.toISOString().split('T')[0];
+                
+                // Display the result
+                document.getElementById('result').innerText = 
+                    `The stock price for ${ticker} for ${tomorrowStr} is predicted to be ${predictedPrice}. This is not financial advice.`;
+            } catch (error) {
+                document.getElementById('result').innerText = 
+                    'An error occurred. Please check the ticker symbol and try again.';
+                console.error('Error:', error);
+            }
+        });
+    </script>
+
     <!-- Projects Section -->
     <div class="container">
         <section id="projects" class="portfolio-section">
