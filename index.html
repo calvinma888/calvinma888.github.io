@@ -165,10 +165,9 @@
                 throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`);
             }
 
-            // Parse as text and then convert body to JSON
-            const dataText = await response.text();
-            const data = JSON.parse(dataText);
-            const predictedPrice = JSON.parse(data.body); // Parse `data.body` directly as a number
+            // Directly parse response as JSON
+            const data = await response.json();
+            const predictedPrice = data.body; // Use data.body directly if it's already a number
             
             // Get tomorrow's date
             const tomorrow = new Date();
