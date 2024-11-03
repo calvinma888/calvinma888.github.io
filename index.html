@@ -176,7 +176,7 @@
             
             // Display the result
             document.getElementById('result').innerText = 
-                `The stock price for ${ticker} for ${tomorrowStr} is predicted to be ${predictedPrice}. This is not financial advice.`;
+                `The stock price for ${ticker} on ${tomorrowStr} is predicted to be ${predictedPrice}. This is not financial advice.`;
         } catch (error) {
             document.getElementById('result').innerText = 
                 `An error occurred: ${error.message}. Please check the ticker symbol and try again.`;
