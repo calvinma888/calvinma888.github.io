@@ -162,7 +162,7 @@
             const response = await fetch(apiUrl);
             
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`);
             }
 
             // Parse as text and then convert body to JSON
@@ -180,7 +180,7 @@
                 `The stock price for ${ticker} for ${tomorrowStr} is predicted to be ${predictedPrice}. This is not financial advice.`;
         } catch (error) {
             document.getElementById('result').innerText = 
-                'An error occurred. Please check the ticker symbol and try again.';
+                `An error occurred: ${error.message}. Please check the ticker symbol and try again.`;
             console.error('Error:', error);
         }
     });
