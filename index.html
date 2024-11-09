@@ -192,8 +192,13 @@
             <div class="portfolio-list">
                 <h2>Personal Projects</h2> <!-- Title for projects -->
                 <div class="portfolio-item" onclick="showPreview('project1')">
-                    <h3>Fine-tuning BERT to Detect Insincere Quora Submissions (Python)</h3>
+                    <h3>Finetuning BERT to Detect Insincere Quora Submissions (Python)</h3>
                     <p>BERT (Bidirectional Encoder Representations from Transformers) was developed by Google AI as a "swiss-army knife" to answer many of natural language processing (NLP) problems, including sentiment analysis, question answering, text generation, summarization, and text prediction. Training a natural language learning model such as BERT is very expensive and time-consuming because of the large number of parameters (110M+) and the massive amount of traning data (3.3 billion words). Therefore, we utilize transfer learning with Tensorflow and Tensorflow Hub in order to finetune a pre-trained BERT model onto our dataset, which is a selection of sincere and insincere questions from Quora.com, in order to classify whether or not a question is authentic.</p>
+                </div>
+                <div class="portfolio-item" onclick="showPreview('project7')">
+                    <h3>Finetuning a Semantic Segmentation model on AWS SageMaker to Identify Boundaries in Pet Images (Python)</h3>
+                    <p>Semantic Segmentation is a deep learning algorithm that classifies each pixel within an image as foreground, background, or boundary. It uses a fully convolutional network, unlike traditional convolutional networks that contain flat but denser layers, which allows for the extraction of more information and faster training times</p>
+                    <p>In this project, I use AWS Sagemaker to finetune and deploy a semantic segmentation model to outline the borders of pets within different images</p>
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project6')">
                     <h3>Window Functions (SQL)</h3>
@@ -260,6 +265,7 @@
             'project4': `<iframe src="project4.pdf" class="iframe-container"></iframe>`,
             'project5': `<iframe src="project5.pdf" class="iframe-container"></iframe>`,
             'project6': `<iframe src="project6.pdf" class="iframe-container"></iframe>`,
+            'project7': `<iframe src="project7.pdf" class="iframe-container"></iframe>`
         };
 
         let currentProject = null; // Track the current project being shown
