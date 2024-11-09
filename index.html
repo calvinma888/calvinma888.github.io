@@ -190,10 +190,14 @@
     <div class="container">
         <section id="projects" class="portfolio-section">
             <div class="portfolio-list">
-                <h2>Other Projects</h2> <!-- Title for projects -->
+                <h2>Personal Projects</h2> <!-- Title for projects -->
                 <div class="portfolio-item" onclick="showPreview('project1')">
                     <h3>Fine-tuning BERT to Detect Insincere Quora Submissions (Python)</h3>
                     <p>BERT (Bidirectional Encoder Representations from Transformers) was developed by Google AI as a "swiss-army knife" to answer many of natural language processing (NLP) problems, including sentiment analysis, question answering, text generation, summarization, and text prediction. Training a natural language learning model such as BERT is very expensive and time-consuming because of the large number of parameters (110M+) and the massive amount of traning data (3.3 billion words). Therefore, we utilize transfer learning with Tensorflow and Tensorflow Hub in order to finetune a pre-trained BERT model onto our dataset, which is a selection of sincere and insincere questions from Quora.com, in order to classify whether or not a question is authentic.</p>
+                </div>
+                <div class="portfolio-item" onclick="showPreview('project6')">
+                    <h3>Window Functions (SQL)</h3>
+                    <p>Window functions in SQL are used to perform calculations across a set of table rows related to the current row without grouping the data into a single result per group. Window functions allow for row-level granularity and access to rows above and below the current row. Some window functions include: ROW_NUMBER(), LEAD(), LAG(), FIRST_VALUE(), LAST_VALUE(), RANK(), NTILE()</p>
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project2')">
                     <h3>Classifying Diabetes with PySparkML (PySpark)</h3>
