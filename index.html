@@ -198,44 +198,8 @@
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project7')">
                     <h3>Finetuning a Semantic Segmentation model on AWS SageMaker to Identify Boundaries in Pet Images (Python)</h3>
-                    <p>Semantic Segmentation is a deep learning algorithm that classifies each pixel within an image as foreground, background, or boundary. It uses a fully convolutional network, unlike traditional convolutional networks that contain flat but denser layers, which allows for the extraction of more information and faster training times</p>
+                    <p>Semantic Segmentation is a computer vision algorithm that uses deep learning to classify each pixel within an image as foreground, background, or boundary. It uses a fully convolutional network (FCN), unlike traditional convolutional networks (CNNs) that contain fully connected layers. This enables FCNs to excel in pixel-wise classification, which is used in medical imaging to detect tumors and other anatomical structures, in satellite image analysis to monitor urban developments, or in social media applications to determine the depth and overlay certain filters</p>
                     <p>In this project, I use AWS Sagemaker to finetune and deploy a semantic segmentation model to outline the borders of pets within different images</p>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Feature</th>
-                          <th>CNN</th>
-                          <th>FCN</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Output</td>
-                          <td>Single label or class probability</td>
-                          <td>Pixel-wise classification</td>
-                        </tr>
-                        <tr>
-                          <td>Structure</td>
-                          <td>Convolutional + fully connected layers</td>
-                          <td>Only convolutional and pooling layers</td>
-                        </tr>
-                        <tr>
-                          <td>Spatial Information</td>
-                          <td>Lost after fully connected layers</td>
-                          <td>Preserved with upsampling</td>
-                        </tr>
-                        <tr>
-                          <td>Input Size Flexibility</td>
-                          <td>Fixed-size inputs</td>
-                          <td>Can handle variable-sized inputs</td>
-                        </tr>
-                        <tr>
-                          <td>Applications</td>
-                          <td>Classification, object detection</td>
-                          <td>Image segmentation, dense prediction tasks</td>
-                        </tr>
-                      </tbody>
-                    </table> 
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project6')">
                     <h3>Window Functions (SQL)</h3>
