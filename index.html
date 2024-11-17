@@ -243,7 +243,7 @@
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project7')">
                     <h3>Finetuning a Semantic Segmentation model on AWS SageMaker to Identify Boundaries in Pet Images (Python)</h3>
-                    <p>Semantic Segmentation is a computer vision algorithm that uses deep learning to classify each pixel within an image as foreground, background, or boundary. It uses a fully convolutional network (FCN), unlike traditional convolutional networks (CNNs) that contain fully connected layers. This enables FCNs to excel in pixel-wise classification, which is used in medical imaging to detect tumors and other anatomical structures, in satellite image analysis to monitor urban developments, or in social media applications to determine the depth and overlay certain filters</p>
+                    <p>Semantic Segmentation is a computer vision algorithm that uses deep learning to classify each pixel within an image as foreground, background, or boundary. It uses a fully convolutional network (FCN), unlike traditional convolutional networks (CNNs) that contain fully connected layers. This enables FCNs to excel in pixel-wise classification, which is used in medical imaging to detect tumors and other anatomical structures, in satellite image analysis to monitor urban developments, or in social media applications to determine the depth and overlay certain filters.</p>
                     <p>In this project, I use AWS Sagemaker to finetune and deploy a semantic segmentation model to outline the borders of pets within different images</p>
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project6')">
@@ -257,11 +257,12 @@
 Next, I implemented a Generative Adversarial Network (GAN) to generate synthetic fraudulent transactions. The GAN consists of two components: a Generator that creates new, synthetic fraudulent data, and a Discriminator that evaluates the authenticity of the generated data against real fraudulent transactions. By training these two components in opposition, the GAN is able to generate increasingly realistic fraudulent transactions.
 Finally, I visualized the comparison between the real and synthetic fraudulent transactions across the 28 features. This allowed me to analyze how each feature behaves in both the genuine and synthetic fraud samples, providing insights into the characteristics of fraudulent transactions and how well the GAN can replicate those characteristics.</p>
                 </div>
-<!--                 <div class="portfolio-item" onclick="showPreview('project9')">
-                    <h3> Using AWS Autogluon to predict rent prices in Canada based on city, province, latitude, longitude, lease_term, type, price, beds, baths, sq_feet, furnishing, availability_date, smoking, and whether cats and dogs are allowed</h3> 
-                    <p>First part: data cleaning and model tuning via Autogluon, and then evaluating the model based on MAE</p>
-                    <p>Second part: feature importance, which of the following features were the most important when it comes to determining price?</p>
-                </div> -->
+                <div class="portfolio-item" onclick="showPreview('project9')">
+                    <h3>Using AWS Autogluon to predict rent prices in Canada based on city, province, latitude, longitude, lease_term, type, price, beds, baths, sq_feet, furnishing, availability_date, smoking, and whether cats and dogs are allowed</h3> 
+                    <p>AWS AutoGluon is an open-source machine learning library developed by AWS that automates the process of building, training, and deploying high-performance models, with a focus on ease of use and efficiency, including tabular, image, and text data. In this project, I used its Tabular predictor to perform regression on Canadian rent prices based on a selection of features.</p>
+                    <p>First part: data cleaning and model tuning with Autogluon, and then evaluating the model based on MAE.</p>
+                    <p>Second part: feature importance, of the following features, longitude and latitude were the most important when it comes to determining price, followed by baths, beds, and type. Surprisingly, whether cats and dogs were allowed, and whether smoking is allowed, were the least important.</p>
+                </div>
                 <div class="portfolio-item" onclick="showPreview('project2')">
                     <h3>Classifying Diabetes with PySparkML (PySpark)</h3>
                     <p>There are two types of diabetes: Type 1 diabetes (which is when the immune system attacks the insulin-producing cells in the body) develops early in life, and Type 2 diabetes (which is when the body develops insulin resistance) usually develops gradually over time due to lifestyle-related factors. Type 2 diabetes may be reversed through diet, weight loss, or exercise, and therefore, accurate and timely diagnosis of the disease is crucial.</p>
@@ -324,7 +325,8 @@ Finally, I visualized the comparison between the real and synthetic fraudulent t
             'project5': `<iframe src="project5.pdf" class="iframe-container"></iframe>`,
             'project6': `<iframe src="project6.pdf" class="iframe-container"></iframe>`,
             'project7': `<iframe src="project7.pdf" class="iframe-container"></iframe>`,
-            'project8': `<iframe src="project8.pdf" class="iframe-container"></iframe>`
+            'project8': `<iframe src="project8.pdf" class="iframe-container"></iframe>`,
+            'project9': `<iframe src="project9.pdf" class="iframe-container"></iframe>`
         };
 
         let currentProject = null; // Track the current project being shown
