@@ -250,17 +250,22 @@
                     <h3>Window Functions (SQL)</h3>
                     <p>Window functions in SQL are used to perform calculations across a set of table rows related to the current row without grouping the data into a single result per group. Window functions allow for row-level granularity and access to rows above and below the current row. Some window functions include: ROW_NUMBER(), LEAD(), LAG(), FIRST_VALUE(), LAST_VALUE(), RANK(), NTILE()</p>
                 </div>
-                <div class="portfolio-item" onclick="showPreview('project2')">
-                    <h3>Classifying Diabetes with PySparkML (PySpark)</h3>
-                    <p>There are two types of diabetes: Type 1 diabetes (which is when the immune system attacks the insulin-producing cells in the body) develops early in life, and Type 2 diabetes (which is when the body develops insulin resistance) usually develops gradually over time due to lifestyle-related factors. Type 2 diabetes may be reversed through diet, weight loss, or exercise, and therefore, accurate and timely diagnosis of the disease is crucial.</p>
-                    <p>Type 2 diabetes can have numerous indicating factors including pregnancy, blood glucose level, skin thickness, insulin resistance, BMI, age, and many more. However, because oftentimes these symptoms develop slowly, they may be difficult to recognize. Therefore, we utilize PySpark ML in order to train a model to classify whether or not a patient has diabetes, with a resulting Area Under the Curve of 0.8412.</p>
-                </div>
                 <div class="portfolio-item" onclick="showPreview('project8')">
                     <h3>Using a Generative Adversarial Network (GAN) to Generate Synthetic Data to Resolve Class Imbalance (Python)</h3>
                     <p>In certain datasets, like credit card fraud detection, one class (e.g., non-fraudulent transactions) often greatly outnumbers the other (fraudulent transactions), leading to class imbalance. This imbalance can introduce biases when training machine learning models, as the model may become overly biased toward predicting the majority class.</p>
                     <p>In this project, I first applied Principal Component Analysis (PCA) to reduce the dimensionality of the dataset, which originally contained 29 features, down to 2 components. This dimensionality reduction helps to visualize the structure of the data, revealing how fraudulent transactions compare to genuine ones in a lower-dimensional space.
 Next, I implemented a Generative Adversarial Network (GAN) to generate synthetic fraudulent transactions. The GAN consists of two components: a Generator that creates new, synthetic fraudulent data, and a Discriminator that evaluates the authenticity of the generated data against real fraudulent transactions. By training these two components in opposition, the GAN is able to generate increasingly realistic fraudulent transactions.
 Finally, I visualized the comparison between the real and synthetic fraudulent transactions across the 28 features. This allowed me to analyze how each feature behaves in both the genuine and synthetic fraud samples, providing insights into the characteristics of fraudulent transactions and how well the GAN can replicate those characteristics.</p>
+                </div>
+<!--                 <div class="portfolio-item" onclick="showPreview('project9')">
+                    <h3> Using AWS Autogluon to predict rent prices in Canada based on city, province, latitude, longitude, lease_term, type, price, beds, baths, sq_feet, furnishing, availability_date, smoking, and whether cats and dogs are allowed</h3> 
+                    <p>First part: data cleaning and model tuning via Autogluon, and then evaluating the model based on MAE</p>
+                    <p>Second part: feature importance, which of the following features were the most important when it comes to determining price?</p>
+                </div> -->
+                <div class="portfolio-item" onclick="showPreview('project2')">
+                    <h3>Classifying Diabetes with PySparkML (PySpark)</h3>
+                    <p>There are two types of diabetes: Type 1 diabetes (which is when the immune system attacks the insulin-producing cells in the body) develops early in life, and Type 2 diabetes (which is when the body develops insulin resistance) usually develops gradually over time due to lifestyle-related factors. Type 2 diabetes may be reversed through diet, weight loss, or exercise, and therefore, accurate and timely diagnosis of the disease is crucial.</p>
+                    <p>Type 2 diabetes can have numerous indicating factors including pregnancy, blood glucose level, skin thickness, insulin resistance, BMI, age, and many more. However, because oftentimes these symptoms develop slowly, they may be difficult to recognize. Therefore, we utilize PySpark ML in order to train a model to classify whether or not a patient has diabetes, with a resulting Area Under the Curve of 0.8412.</p>
                 </div>
 <!--                 <div class="portfolio-item" onclick="showPreview('project3')">
                     <h3>US Political Party Affiliation: Data Exploration and Visualization (Python)</h3>
