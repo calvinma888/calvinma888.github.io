@@ -258,10 +258,10 @@ Next, I implemented a Generative Adversarial Network (GAN) to generate synthetic
 Finally, I visualized the comparison between the real and synthetic fraudulent transactions across the 28 features. This allowed me to analyze how each feature behaves in both the genuine and synthetic fraud samples, providing insights into the characteristics of fraudulent transactions and how well the GAN can replicate those characteristics.</p>
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project9')">
-                    <h3>Using AWS Autogluon to predict rent prices in Canada based on city, province, latitude, longitude, lease_term, type, price, beds, baths, sq_feet, furnishing, availability_date, smoking, and whether cats and dogs are allowed</h3> 
+                    <h3>Using AWS Autogluon to predict rent prices in Canada based on city, province, latitude, longitude, lease term, type, price, beds, baths, square feet, furnishing, availability date, smoking allowed, and whether cats and dogs are allowed</h3> 
                     <p>AWS AutoGluon is an open-source machine learning library developed by AWS that automates the process of building, training, and deploying high-performance models, with a focus on ease of use and efficiency, including tabular, image, and text data. In this project, I used its Tabular predictor to perform regression on Canadian rent prices based on a selection of features.</p>
-                    <p>First part: data cleaning and model tuning with Autogluon, and then evaluating the model based on MAE.</p>
-                    <p>Second part: feature importance, of the following features, longitude and latitude were the most important when it comes to determining price, followed by baths, beds, and type. Surprisingly, whether cats and dogs were allowed, and whether smoking is allowed, were the least important.</p>
+                    <p>First part (data exploration, model training, and model evaluation): data cleaning and model training with Autogluon, and then evaluating the model based on MAE.</p>
+                    <p>Second part (feature importance and explainable AI): longitude and latitude were the most important when it comes to determining price, followed by baths, beds, and type. Surprisingly, whether cats and dogs were allowed, and whether smoking is allowed, were the least important. I also plotted residuals to see how the model predictions performed against actual prices.</p>
                 </div>
                 <div class="portfolio-item" onclick="showPreview('project2')">
                     <h3>Classifying Diabetes with PySparkML (PySpark)</h3>
