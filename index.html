@@ -187,7 +187,7 @@
 </script>
 
     <!-- Tableau -->
-<div style="display: flex; justify-content: center; margin: 20px 0; padding-top: 20px;">
+    <div style="display: flex; justify-content: center; margin: 20px 0; padding-top: 20px;">
     <div class="tableauPlaceholder" id="viz1731441817835" style="position: relative;">
         <h3>Tableau Visualization</h3>
         <p>Please click on the right to filter by province</p>
@@ -231,18 +231,123 @@
 </script>
 
     <!-- JavaScript WebApp Section -->
+    <div style="display: flex; justify-content: center; margin: 20px 0; padding-top: 20px;">
     <h3>Random Quote Generator</h3>
-  <blockquote id="quote">Press the button to generate a quote!</blockquote>
-  <button id="generate">Generate Quote</button>
+      <blockquote id="quote">Generate a quote!</blockquote>
+      <button id="generate">Generate Quote</button>
 
   <script>
     const quotes = [
-      "The best way to get started is to quit talking and begin doing. - Walt Disney",
-      "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty. - Winston Churchill",
-      "Don't let yesterday take up too much of today. - Will Rogers",
-      "You learn more from failure than from success. Don't let it stop you. Failure builds character. - Unknown",
-      "It's not whether you get knocked down, it's whether you get up. - Vince Lombardi"
-    ];
+  "The best way to get started is to quit talking and begin doing. - Walt Disney",
+  "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty. - Winston Churchill",
+  "Don't let yesterday take up too much of today. - Will Rogers",
+  "You learn more from failure than from success. Don't let it stop you. Failure builds character. - Unknown",
+  "It's not whether you get knocked down, it's whether you get up. - Vince Lombardi",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+  "Hardships often prepare ordinary people for an extraordinary destiny. - C.S. Lewis",
+  "What lies behind us and what lies before us are tiny matters compared to what lies within us. - Ralph Waldo Emerson",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "The journey of a thousand miles begins with one step. - Lao Tzu",
+  "You must be the change you wish to see in the world. - Mahatma Gandhi",
+  "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+  "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+  "Believe you can and you're halfway there. - Theodore Roosevelt",
+  "Do what you can with all you have, wherever you are. - Theodore Roosevelt",
+  "We may encounter many defeats, but we must not be defeated. - Maya Angelou",
+  "In the middle of every difficulty lies opportunity. - Albert Einstein",
+  "Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+  "Success is not how high you have climbed, but how you make a positive difference to the world. - Roy T. Bennett",
+  "It always seems impossible until it's done. - Nelson Mandela",
+  "You miss 100% of the shots you don't take. - Wayne Gretzky",
+  "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+  "Everything you’ve ever wanted is on the other side of fear. - George Addair",
+  "Opportunities don't happen, you create them. - Chris Grosser",
+  "Act as if what you do makes a difference. It does. - William James",
+  "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer",
+  "There are no limits to what you can accomplish, except the limits you place on your own thinking. - Brian Tracy",
+  "It is never too late to be what you might have been. - George Eliot",
+  "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
+  "The road to success and the road to failure are almost exactly the same. - Colin R. Davis",
+  "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau",
+  "Don’t be afraid to give up the good to go for the great. - John D. Rockefeller",
+  "The way to get started is to quit talking and begin doing. - Walt Disney",
+  "If you want to achieve greatness stop asking for permission. - Anonymous",
+  "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+  "Don’t let what you cannot do interfere with what you can do. - John Wooden",
+  "If you cannot do great things, do small things in a great way. - Napoleon Hill",
+  "The best time to plant a tree was 20 years ago. The second best time is now. - Chinese Proverb",
+  "It does not matter how slowly you go as long as you do not stop. - Confucius",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "If you can dream it, you can do it. - Walt Disney",
+  "Success is the sum of small efforts, repeated day in and day out. - Robert Collier",
+  "To succeed in life, you need two things: ignorance and confidence. - Mark Twain",
+  "The secret of getting ahead is getting started. - Mark Twain",
+  "The best revenge is massive success. - Frank Sinatra",
+  "Success is not in what you have, but who you are. - Bo Bennett",
+  "When you cease to dream, you cease to live. - Malcolm Forbes",
+  "A person who never made a mistake never tried anything new. - Albert Einstein",
+  "You can't go back and change the beginning, but you can start where you are and change the ending. - C.S. Lewis",
+  "The only place where success comes before work is in the dictionary. - Vidal Sassoon",
+  "Don't wait. The time will never be just right. - Napoleon Hill",
+  "Start where you are. Use what you have. Do what you can. - Arthur Ashe",
+  "The difference between who you are and who you want to be is what you do. - Unknown",
+  "You don’t have to be great to start, but you have to start to be great. - Zig Ziglar",
+  "Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats",
+  "Act as if it were impossible to fail. - Dorothea Brande",
+  "Success is walking from failure to failure with no loss of enthusiasm. - Winston Churchill",
+  "I find that the harder I work, the more luck I seem to have. - Thomas Jefferson",
+  "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart. - Roy T. Bennett",
+  "What you get by achieving your goals is not as important as what you become by achieving your goals. - Zig Ziglar",
+  "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+  "Success is how high you bounce when you hit bottom. - George S. Patton",
+  "The harder you work for something, the greater you’ll feel when you achieve it. - Unknown",
+  "In order to succeed, we must first believe that we can. - Nikos Kazantzakis",
+  "The way to get started is to quit talking and begin doing. - Walt Disney",
+  "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. - Christian D. Larson",
+  "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
+  "Success is not how far you got, but the distance you traveled from where you started. - Unknown",
+  "Hard work beats talent when talent doesn’t work hard. - Tim Notke",
+  "Don't wait for opportunity. Create it. - Unknown",
+  "You do not find the happy life. You make it. - Camilla Eyring Kimball",
+  "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will. - Vince Lombardi",
+  "Don’t be afraid to give up the good to go for the great. - John D. Rockefeller",
+  "You are never too old to set another goal or dream a new dream. - C.S. Lewis",
+  "Keep your face always toward the sunshine—and shadows will fall behind you. - Walt Whitman",
+  "Success is not just about what you accomplish in your life; it’s about what you inspire others to do. - Unknown",
+  "You miss 100% of the shots you don't take. - Wayne Gretzky",
+  "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "A goal without a plan is just a wish. - Antoine de Saint-Exupéry",
+  "The best way to predict your future is to create it. - Abraham Lincoln",
+  "To live a creative life, we must lose our fear of being wrong. - Joseph Chilton Pearce",
+  "If you can dream it, you can do it. - Walt Disney",
+  "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+  "What we achieve inwardly will change outer reality. - Plutarch",
+  "Failure is simply the opportunity to begin again, this time more intelligently. - Henry Ford",
+  "Success seems to be connected with action. Successful people keep moving. They make mistakes, but they don't quit. - Conrad Hilton",
+  "In the end, we only regret the chances we didn't take. - Lewis Carroll",
+  "Start where you are. Use what you have. Do what you can. - Arthur Ashe",
+  "It’s not whether you get knocked down, it’s whether you get up. - Vince Lombardi",
+  "Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats",
+  "Everything you’ve ever wanted is on the other side of fear. - George Addair",
+  "I find that the harder I work, the more luck I seem to have. - Thomas Jefferson",
+  "If you are not willing to risk the usual, you will have to settle for the ordinary. - Jim Rohn",
+  "The best way to predict your future is to create it. - Abraham Lincoln",
+  "Don’t be afraid to give up the good to go for the great. - John D. Rockefeller",
+  "You can never cross the ocean until you have the courage to lose sight of the shore. - Christopher Columbus",
+  "Success is the sum of small efforts, repeated day in and day out. - Robert Collier",
+  "Success doesn’t come from what you do occasionally, it comes from what you do consistently. - Marie Forleo",
+  "A person who never made a mistake never tried anything new. - Albert Einstein",
+  "The best way to predict your future is to create it. - Abraham Lincoln",
+  "Don’t let yesterday take up too much of today. - Will Rogers",
+  "The only thing standing between you and your goal is the story you keep telling yourself as to why you can’t achieve it. - Jordan Belfort",
+  "Success is not in what you have, but who you are. - Bo Bennett",
+  "When you cease to dream, you cease to live. - Malcolm Forbes",
+  "A person who never made a mistake never tried anything new. - Albert Einstein",
+  "If you can dream it, you can do it. - Walt Disney",
+  "Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+  "Everything you’ve ever wanted is on the other side of fear. - George Addair"
+];
 
     function generateRandomQuote() {
       const randomIndex = Math.floor(Math.random() * quotes.length);
