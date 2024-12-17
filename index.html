@@ -230,6 +230,30 @@
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
 
+    <!-- JavaScript WebApp Section -->
+    document.body.innerHTML = `
+  <div style="text-align: center; margin: 20px;">
+    <h3>Random Quote Generator</h3>
+    <blockquote id="quote" style="font-style: italic; margin: 20px;">Press the button to generate a quote!</blockquote>
+    <button id="generate" style="margin-top: 20px;">Generate Quote</button>
+  </div>
+`;
+
+// JavaScript logic
+const quotes = [
+  "The best way to get started is to quit talking and begin doing. - Walt Disney",
+  "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty. - Winston Churchill",
+  "Don't let yesterday take up too much of today. - Will Rogers",
+  "You learn more from failure than from success. Don't let it stop you. Failure builds character. - Unknown",
+  "It's not whether you get knocked down, it's whether you get up. - Vince Lombardi"
+];
+
+function generateRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  document.getElementById("quote").textContent = quotes[randomIndex];
+}
+
+document.getElementById("generate").addEventListener("click", generateRandomQuote);
 
     <!-- Projects Section -->
     <div class="container">
